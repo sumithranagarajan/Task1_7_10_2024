@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagination</title>
+</head>
+
+<body>
+    <script>
+
+        let page_div = document.createElement("div");
+        let change_div = document.createElement("div");
+        let change_value = document.createElement("p");
+        change_value.innerText = "change : 6";
+        change_div.appendChild(change_value);
+        page_div.appendChild(change_div);
+        page_div.style.position = "relative";
+        page_div.style.height = "50px";
+        page_div.style.width = "600px";
+        page_div.style.top = "200px";
+        page_div.style.left = "400px";
+
+        
+        let outer_div_layout = document.createElement("div");
+        const first_Button = document.createElement('button');
+        first_Button.textContent = "First";
+        first_Button.style.color="#505779";
+        outer_div_layout.appendChild(first_Button);
+        first_Button.style.height = "38px";
+        first_Button.style.width = "56px";
+        first_Button.style.border="1px solid #BBBCC1";
+        first_Button.style.backgroundColor="white";
+        const Previous_Button = document.createElement('button');
+        Previous_Button.textContent = "Previous";
+        Previous_Button.style.color="#505779";
+        outer_div_layout.appendChild(Previous_Button);
+        Previous_Button.style.height = "38px";
+        Previous_Button.style.width = "70px";
+        Previous_Button.style.border="1px solid #BBBCC1";
+        Previous_Button.style.backgroundColor="white";
+
+        for (let i = 1; i < 9; i++) {
+            const pageButton = document.createElement('button');
+            pageButton.textContent = i + 1;
+            outer_div_layout.appendChild(pageButton);
+            pageButton.style.height = "38px";
+            pageButton.style.width = "35px";
+            pageButton.style.border="1px solid #BBBCC1";
+            pageButton.style.color="#505779";
+            pageButton.style.backgroundColor="white";
+            if (i == 1) {
+                outer_div_layout.appendChild(pageButton);
+                pageButton.style.backgroundColor = "#DCDCDE";
+            }
+            if (i == 5) {
+                outer_div_layout.appendChild(pageButton);
+                pageButton.style.backgroundColor = "#3358FF";
+                pageButton.style.color="white";
+                pageButton.style.border="1px solid #3358FF";
+            }
+            
+
+        }
+
+        
+        const last_button = document.createElement('button');
+        last_button.textContent = "Last";
+        last_button.style.color="#505779";
+        last_button.style.height = "38px";
+        last_button.style.width = "56px";
+        last_button.style.border="1px solid #BBBCC1";
+        last_button.style.backgroundColor="white";
+
+        const next_button = document.createElement('button');
+        next_button.textContent = "Next";
+        next_button.style.color="#505779";
+        next_button.style.height = "38px";
+        next_button.style.width = "56px";
+        next_button.style.border="1px solid #BBBCC1";
+        next_button.style.backgroundColor="white";
+       
+        outer_div_layout.appendChild(next_button);
+        outer_div_layout.appendChild(last_button);
+        page_div.appendChild(outer_div_layout);
+        document.body.appendChild(page_div);
+
+
+
+    </script>
+</body>
+
+</html>
